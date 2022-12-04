@@ -114,8 +114,7 @@ def day4():
       a1, a2 = assignment
       r1, r2 = [int(x) for x in a1.split("-") ]
       r3, r4 = [int(x) for x in a2.split("-") ]
-      if (r1 <= r3 and r2 >= r4) or (r3 <= r1 and r4 >= r2):
-        print(r1,r2," -- ", r3,r4)
+      if (r1 <= r3 and r2 >= r4) or (r3 <= r1 and r4 >= r2):        
         count += 1
 
     return(count)
