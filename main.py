@@ -1,6 +1,7 @@
 from itertools import groupby
 from heapq import nlargest
 from string import ascii_letters
+from io import StringIO
 
 import re
 
@@ -162,5 +163,19 @@ def day5():
     res = "".join([stack[0] for stack in stacks])
     print(res.replace("[", "").replace("]", ""))
 
-
-day5()
+# ----- Day 6
+def day6():
+  with open("day6.input") as day6in:
+    packet_offset = 4
+    message_offset = 14
+    offset = message_offset # switch for part I or II
+    
+    stream = day6in.readlines()[0]
+    
+    for i in range(len(stream)-(offset-1)):
+      window = stream[i:i+offset]
+      if len(set(window)) == len(window):
+        print(window, i+offset)
+        break
+    
+day6()
